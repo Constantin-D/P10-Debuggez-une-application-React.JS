@@ -1,5 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import EventCard from "./index";
+// import eventData from "./events.json"; // Importe le fichier JSON
+
+// const event = eventData[0]; // Récupère le premier élément du tableau JSON
 
 describe("When a event card is created", () => {
   it("an image is display with alt value", () => {
