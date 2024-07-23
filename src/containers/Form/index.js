@@ -59,6 +59,7 @@ const Form = ({ onSuccess, onError }) => {
                         placeholder="message"
                         label="Message"
                         type={FIELD_TYPES.TEXTAREA}
+                        // required="required"
                     />
                 </div>
             </div>
