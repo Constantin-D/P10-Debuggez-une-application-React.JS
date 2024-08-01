@@ -13,14 +13,13 @@ const Select = ({
     label,
     type = "normal",
 }) => {
-    const [value, setValue] = useState(); // État pour la valeur sélectionnée
-    const [collapsed, setCollapsed] = useState(true); // État pour contrôler l'affichage de la liste déroulante
+    const [value, setValue] = useState(); 
+    const [collapsed, setCollapsed] = useState(true); 
 
-    // Fonction pour changer la valeur sélectionnée
     const changeValue = (newValue) => {
-        onChange(newValue); // Passer la nouvelle valeur à la fonction onChange
-        setValue(newValue); // Mettre à jour la valeur sélectionnée
-        setCollapsed(true); // Fermer la liste déroulante après la sélection
+        onChange(newValue);
+        setValue(newValue); 
+        setCollapsed(true); 
     };
     
     return (

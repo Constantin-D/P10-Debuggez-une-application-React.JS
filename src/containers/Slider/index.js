@@ -16,9 +16,6 @@ const Slider = () => {
         () =>
             setIndex((prevIndex) => (prevIndex + 1) % (byDateDesc.length || 1)),
         5000);
-    
-       
-    
     return () => clearInterval(nextCard);
     
   });

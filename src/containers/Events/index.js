@@ -10,16 +10,15 @@ import "./style.css";
 const PER_PAGE = 9;
 
 const EventList = () => {
-    const { data, error } = useData(); // Récupérer les données et les erreurs du contexte DataContext
-    const [type, setType] = useState(); // État pour le type d'événement sélectionné
-    const [currentPage, setCurrentPage] = useState(1); // État pour la page actuelle
+    const { data, error } = useData(); 
+    const [type, setType] = useState(); 
+    const [currentPage, setCurrentPage] = useState(1); 
 
-    // Filtrer les événements en fonction du type et de la page actuelle
     const filteredEvents = (
         (!type
-            ? data?.events // Si aucun type n'est sélectionné, afficher tous les événements
+            ? data?.events 
             : data?.events.filter((event) => event.type === type)) || []
-    ) // Si les données ne sont pas encore chargées, afficher un tableau vide
+    ) 
         .filter((_event, index) => {
             if (
                 (currentPage - 1) * PER_PAGE <= index &&
@@ -30,7 +29,6 @@ const EventList = () => {
             return false;
         });
 
-    // Fonction pour changer le type et réinitialiser la page à 1
     const changeType = (evtType) => {
         setCurrentPage(1);
         setType(evtType);
@@ -69,23 +67,11 @@ const EventList = () => {
                             </Modal>
                         ))}
                     </div>
-                    {/* <div className="Pagination">
-                        {[...Array(pageNumber || 0)].map((_, n) => (
-                            // eslint-disable-next-line react/no-array-index-key
-                            <a
-                                key={n}
-                                href="#events"
-                                onClick={() => setCurrentPage(n + 1)}
-                            >
-                                {n + 1}
-                            </a>
-                        ))}
-                    </div> */}
                     <div className="Pagination">
                         {Array.from({ length: pageNumber }, (_, n) => (
                             <a
-                                key={n + 1} // Utiliser n + 1 comme clé
-                                href="#events" // Lien ancre qui scroll la page jusqu'à l'élément ayant l'id "events"
+                                key={n + 1} 
+                                href="#events" 
                                 onClick={() => setCurrentPage(n + 1)}
                             >
                                 {n + 1}

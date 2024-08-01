@@ -1,4 +1,3 @@
-// import { useDebugValue } from 'react';
 import Menu from "../../containers/Menu";
 import ServiceCard from "../../components/ServiceCard";
 import EventCard from "../../components/EventCard";
@@ -15,10 +14,7 @@ import { useData } from "../../contexts/DataContext";
 
 const Page = () => {
     const { data } = useData();
-    // const last = data? data.events[data.events.length - 1] : null;
-    // const last = data?.events?.[data.events.length - 1] || null;
     const last = data?.events[data.events.length - 1]; // Récupérer le dernier événement
-    // console.log(last);
 
     return (
         <>
@@ -144,7 +140,6 @@ const Page = () => {
                             title={last.title}
                             date={new Date(last.date)}
                             small
-                            // label="boom"
                             label={last.type}
                         />
                     )}
